@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InterviewPro Landing Prototypes</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      --bg: #f6f7f9; --card: #fff; --ink: #111827; --muted: #6b7280; --line: #e5e7eb;
+      --brand: #1f3864;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 system-ui, sans-serif; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+             padding: 14px 24px; background: var(--card); border-bottom: 1px solid var(--line); }
+    h1 { margin: 0; font-size: 16px; }
+    header p { margin: 0; color: var(--muted); }
+    header a { color: var(--brand); font-weight: 600; text-decoration: none; white-space: nowrap; }
+    main { padding: 16px 24px; display: grid; gap: 12px;
+           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+            display: flex; flex-direction: column; }
+    .thumb { position: relative; height: 190px; overflow: hidden; background: #fff;
+             border-bottom: 1px solid var(--line); display: block; }
+    .thumb iframe { width: 1280px; height: 800px; border: 0; transform: scale(.25); transform-origin: 0 0;
+                    pointer-events: none; }
+    .body { padding: 10px 12px; display: grid; gap: 6px; }
+    .body h2 { margin: 0; font-size: 14px; }
+    .body p { margin: 0; color: var(--muted); font-size: 13px; }
+    .versions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .versions a { padding: 2px 10px; border: 1px solid var(--line); border-radius: 999px;
+                  color: var(--ink); text-decoration: none; font-size: 12px; }
+    .versions a:hover { border-color: var(--brand); color: var(--brand); }
+    .empty { color: var(--muted); grid-column: 1 / -1; background: var(--card); border: 1px dashed var(--line);
+             border-radius: 10px; padding: 24px; }
+    .empty a { color: var(--brand); font-weight: 600; text-decoration: none; }
+    @media (max-width: 600px) { header, main { padding-left: 16px; padding-right: 16px; }
+                                header { flex-wrap: wrap; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>InterviewPro: landing page prototypes</h1>
+      <p>Each prototype is a small site (Home, Features, How it works, For candidates, About &amp; contact). Switch versions A / B / C from the bar at the bottom; you stay on the same page.</p>
+    </div>
+    <nav style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="content.html">Content sheet &rarr;</a>
+      <a href="content-sources.html">Sources &amp; checks &rarr;</a>
+      <a href="competitors/index.html">Competitor sheet &rarr;</a>
+    </nav>
+  </header>
+  <main id="grid"></main>
+
+  <script>document.write('<script src="prototypes.js?v=' + Date.now() + '"><\/script>');</script>
+  <script>
+    var grid = document.getElementById("grid");
+    var list = window.PROTOTYPES || [];
+    if (!list.length) grid.innerHTML = '<p class="empty">No drafts yet. Start with the ' +
+      '<a href="competitors/index.html">competitor sheet</a> and the <a href="content.html">content sheet</a>.</p>';
+    list.forEach(function (p) {
+      var first = "prototypes/" + p.slug + "/" + p.versions[0].id + "/index.html";
+      var card = document.createElement("article");
+      card.className = "card";
+      card.innerHTML =
+        '<a class="thumb" href="' + first + '"><iframe src="' + first +
+          '" loading="lazy" tabindex="-1" title="' + p.name + ' preview"></iframe></a>' +
+        '<div class="body"><h2>' + p.name + "</h2>" + (p.note ? "<p>" + p.note + "</p>" : "") +
+        '<div class="versions">' + p.versions.map(function (v) {
+          return '<a href="prototypes/' + p.slug + "/" + v.id + '/index.html" title="' + (v.note || "") + '">' +
+            "Version " + v.id.toUpperCase() + "</a>";
+        }).join("") + "</div></div>";
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

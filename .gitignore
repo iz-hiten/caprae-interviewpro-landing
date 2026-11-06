@@ -1,0 +1,6 @@
+.vercel
+.DS_Store
+__pycache__/
+tools/recording/media/
+tools/recording/out/
+*.frames/

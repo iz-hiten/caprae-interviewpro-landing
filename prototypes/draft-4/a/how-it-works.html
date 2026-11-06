@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How it works | InterviewPro by Caprae Capital</title>
+  <meta name="description" content="From application to first day in seven steps: who does what at each one, and what InterviewPro does on its own.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="img/caprae-logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- Draft 4: the CRM landing's Draft 3 template, for InterviewPro. Every app window is InterviewPro
+     rebuilt in HTML with the demo data it was recorded with (Candidate 1…73, example.com). -->
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><path d="M3 7h12v10H3zM15 10l6-3v10l-6-3"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 10h18M9 5v14"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21a7 7 0 0 1 14 0M17 3a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  </svg>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="index.html"><img src="img/caprae-logo.webp" alt="Caprae Capital" width="26" height="26"><b>INTERVIEW</b><span>PRO</span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="how-it-works.html" aria-current="page">How it works</a>
+        <a href="candidates.html">For candidates</a>
+        <a href="contact.html">About &amp; contact</a>
+      </nav>
+      <a class="nav-login" href="https://interview.saasquatchleads.com">Sign in</a>
+      <a class="btn" href="contact.html#contact">Talk to the team</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero wrap">
+      <p class="eyebrow">How it works</p>
+      <h1>From application to first day, step by step.</h1>
+      <p class="lead">Seven steps, and who does what at each one: the candidate, your team, or InterviewPro on its own. Every picture is the real app with demo data.</p>
+      <div class="who-chips" style="margin-top:16px"><i>Candidate</i><i class="t">Your team</i><i class="a">Automatic</i></div>
+    </section>
+
+    <section class="loop wrap" style="padding-top:72px">
+      <div class="loop-wins">
+        <div class="win lw" data-step="0">
+          <div class="win-bar"><i></i><i></i><i></i><span>Weekly Applicants</span></div>
+          <div class="lw-body ">
+            <div class="p-title"><b class="serif">Weekly Applicants</b><span>View and manage applicants by date range</span></div>
+            <div class="tools"><span class="search">Search across all columns…</span><i>Import Excel/CSV</i><i class="dk">Add applicant</i></div>
+            <p class="showing">Showing 47 applicants</p>
+            <div class="tbl-scroll"><table class="atable"><tr><th>Applicant</th><th>Position</th><th>Applied</th></tr>
+              <tr><td>Candidate 11<span>candidate11@example.com</span></td><td>Research Internship</td><td>2 days ago</td></tr>
+              <tr><td>Candidate 8<span>candidate8@example.com</span></td><td>PE Internship</td><td>3 days ago</td></tr></table></div>
+          </div>
+        </div>
+        <div class="win lw" data-step="1">
+          <div class="win-bar"><i></i><i></i><i></i><span>Weekly Applicants · Handbook</span></div>
+          <div class="lw-body ">
+            <div class="p-title"><b class="serif">Handbook</b><span>Graded by your team, pass or fail</span></div>
+            <div class="tbl-scroll"><table class="atable"><tr><th>Applicant</th><th>Position</th><th>Handbook</th><th>Grade</th><th>Handbook 2</th></tr>
+              <tr class="hi"><td>Candidate 11</td><td>Research Internship</td><td><i class="chip onb">Pass</i></td><td>8</td><td><i class="chip onb">Pass</i></td></tr>
+              <tr><td>Candidate 8</td><td>PE Internship</td><td><i class="chip onb">Pass</i></td><td>9</td><td>–</td></tr>
+              <tr><td>Candidate 41</td><td>PE Internship</td><td><i class="chip rej">Fail</i></td><td>4</td><td>–</td></tr></table></div>
+          </div>
+        </div>
+        <div class="win lw" data-step="2">
+          <div class="win-bar"><i></i><i></i><i></i><span>InterviewPro Portal</span></div>
+          <div class="lw-body portal">
+            <div class="portal-top">INTERVIEWPRO PORTAL</div>
+            <div class="portal-q"><b>Question 1 of 3</b><span>Please watch the question below, then record your video response.</span></div>
+            <div class="cam"><img src="img/cam.jpg" alt="" width="480" height="435" loading="lazy"></div>
+            <div class="timer"><div><span>Prepare your answer</span><b>00:24</b></div><i class="rec-btn">Start Recording</i></div>
+          </div>
+        </div>
+        <div class="win lw" data-step="3">
+          <div class="win-bar"><i></i><i></i><i></i><span>Recordings · AI evaluation</span></div>
+          <div class="lw-body aie">
+            <span class="lbl">Question</span><div class="box">Why private equity, and why a firm like ours?</div>
+            <span class="lbl">Transcription</span><div class="box">I'd start with why I want to work on small business acquisitions. Most of these companies are run by founders who built them over twenty years…</div>
+            <div class="res"><span class="lbl">Score</span><b>86/100</b><div class="pro"><i>✓</i><span>Clear reason for applying; connects interest to the work.</span></div><div class="con"><i>✕</i><span>Could be more specific about what they have done so far.</span></div></div>
+          </div>
+        </div>
+        <div class="win lw" data-step="4" data-anim>
+          <div class="win-bar"><i></i><i></i><i></i><span>Score interview</span></div>
+          <div class="lw-body score">
+            <div class="p-title"><b class="serif">Candidate 3</b><span>PE Internship · AI score 4.4 / 5</span></div>
+            <div class="sl">Preparation<span class="t"><i style="--v:90%"></i></span><b>9</b></div>
+            <div class="sl">Communication<span class="t"><i style="--v:80%"></i></span><b>8</b></div>
+            <div class="sl">Mission<span class="t"><i style="--v:80%"></i></span><b>8</b></div>
+            <div class="final"><div><b>Final score: 8/10</b><span>Weighted: Prep 40% · Comm 35% · Mission 25%</span></div><i class="chip sel">Selected</i></div>
+          </div>
+        </div>
+        <div class="win lw" data-step="5">
+          <div class="win-bar"><i></i><i></i><i></i><span>Selected Candidates</span></div>
+          <div class="lw-body ">
+            <div class="p-title"><b class="serif">Selected Candidates</b><span>Send the NDA to one or all</span></div>
+            <ul class="rows plain"><li><i></i><b>Candidate 3</b><span>PE Internship · final 8 / 10</span></li><li><i></i><b>Candidate 30</b><span>PE Internship · NDA sent</span></li><li><i></i><b>Candidate 44</b><span>Strategic Marketing Internship · final 8 / 10</span></li></ul>
+            <div class="btnrow"><i class="gd">Send NDA</i><i>Send NDA to all</i></div>
+          </div>
+        </div>
+        <div class="win lw" data-step="6">
+          <div class="win-bar"><i></i><i></i><i></i><span>Onboarding Candidates</span></div>
+          <div class="lw-body ">
+            <div class="p-title"><b class="serif">Onboarding Candidates</b><span>NDA accepted</span></div>
+            <ul class="rows plain"><li><i class="g"></i><b>Candidate 21</b><span>Research Internship · NDA sent and received</span></li><li><i class="g"></i><b>Candidate 52</b><span>PE Internship · NDA sent and received</span></li><li><i class="g"></i><b>Candidate 63</b><span>Business Development Associate · NDA sent and received</span></li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="loop-copy">
+        <p class="eyebrow">How it works</p>
+        <h2>Seven steps</h2>
+        <ol class="loop-list">
+          <li class="on"><b><span class="no">1</span>Application</b><span>Applications reach the Weekly Applicants table from your inbox. Your team can also add someone by hand or import a spreadsheet.<span class="who-chips"><i>Candidate</i><i class="a">Automatic</i></span></span></li>
+          <li><b><span class="no">2</span>Handbook</b><span>Each applicant receives the handbook for their role, with a deadline, a short tutorial and an info session. Your team grades it pass or fail; some roles have a second handbook.<span class="who-chips"><i>Candidate</i><i class="t">Your team</i></span></span></li>
+          <li><b><span class="no">3</span>Interview</b><span>Passing the handbook sends the candidate their recorded-interview link. Choose a live interview instead and they get a booking link with the next interviewer in the rotation.<span class="who-chips"><i>Candidate</i><i class="a">Automatic</i></span></span></li>
+          <li><b><span class="no">4</span>Review</b><span>Each answer arrives with a transcript and an AI evaluation: a score out of 100, strengths and weaknesses. The interview card shows the average out of 5.<span class="who-chips"><i class="a">Automatic</i><i class="t">Your team</i></span></span></li>
+          <li><b><span class="no">5</span>Score</b><span>Reviewers score preparation, communication and mission from 0 to 10, weighted 40, 35 and 25. A final score of 8 or more is Selected; under 5 is Rejected.<span class="who-chips"><i class="t">Your team</i></span></span></li>
+          <li><b><span class="no">6</span>NDA</b><span>Selected candidates get the NDA form, one at a time or all at once. When a candidate accepts it, InterviewPro records the response.<span class="who-chips"><i class="t">Your team</i><i>Candidate</i></span></span></li>
+          <li><b><span class="no">7</span>Onboarding</b><span>Accepted candidates move to Onboarding, with the dates the NDA was sent and received.<span class="who-chips"><i class="a">Automatic</i></span></span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="wrap">
+        <p class="eyebrow" style="color:#9a9a9f">Automatic</p>
+        <h2>What happens<br>without anyone clicking.</h2>
+        <p class="sub" style="color:#9a9a9f;margin:-30px 0 40px">The steps above marked Automatic, in one list.</p>
+        <div class="d-grid">
+          <div class="d-cell"><div class="d-art"><div class="d-fwd"><svg><use href="#i-mail"/></svg>Inbox<em>→ Weekly Applicants</em></div></div><p><b>New applications</b> arrive in the Weekly Applicants table from your inbox.</p></div>
+          <div class="d-cell"><div class="d-art"><div class="d-login"><svg><use href="#i-check"/></svg>Handbook: Pass</div></div><p><b>A handbook pass</b> sends the candidate their recorded-interview link.</p></div>
+          <div class="d-cell"><div class="d-art"><div class="d-avatar"><span>2</span><b>Next interviewer</b><em>In the rotation</em></div></div><p><b>A live interview</b> goes to the next interviewer in the rotation, so no one gets them all.</p></div>
+          <div class="d-cell"><div class="d-art"><div class="d-notes"><span>Transcription</span>"The business I'd want to buy is a commercial cleaning company…"</div></div><p><b>Every answer</b> is transcribed and given an AI evaluation.</p></div>
+          <div class="d-cell"><div class="d-art"><div class="d-bars"><i style="--h:40%"></i><i style="--h:65%"></i><i style="--h:92%"></i></div></div><p><b>A saved score</b> sets the status: Selected at 8 or more, Rejected under 5.</p></div>
+          <div class="d-cell"><div class="d-art"><div class="d-steps"><i></i><i></i><i class="on"></i></div></div><p><b>An accepted NDA</b> moves the candidate to Onboarding with the dates recorded.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="close frame">
+        <img class="close-logo" src="img/caprae-logo.webp" alt="" width="44" height="44" loading="lazy">
+        <h2>Walk through it<br>with the team.</h2>
+        <a class="btn lg" style="margin-top:26px" href="contact.html#contact">Talk to the team</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><img src="img/caprae-logo.webp" alt="Caprae Capital" width="26" height="26" loading="lazy"><b>INTERVIEW</b><span>PRO</span></a>
+        <p>Video interviews, scoring and onboarding paperwork for hiring teams, built by <a href="https://www.capraecapital.com" target="_blank" rel="noopener">Caprae Capital</a>.</p>
+        <p><a href="mailto:partners@capraecapital.com">partners@capraecapital.com</a></p>
+      </div>
+      <nav aria-label="Product"><h4>Product</h4><a href="features.html">Features</a><a href="how-it-works.html">How it works</a><a href="candidates.html">For candidates</a><a href="https://interview.saasquatchleads.com">Sign in</a></nav>
+      <nav aria-label="Company"><h4>Company</h4><a href="contact.html">About &amp; contact</a><a href="https://www.capraecapital.com/" target="_blank" rel="noopener">Caprae Capital</a><a href="https://www.capraecapital.com/team/" target="_blank" rel="noopener">Team</a><a href="https://www.capraecapital.com/field-notes/" target="_blank" rel="noopener">Field Notes</a></nav>
+      <nav aria-label="Contact"><h4>Contact</h4><a href="mailto:partners@capraecapital.com">Email</a><a href="tel:+18186360839">+1 818-636-0839</a><a href="contact.html#contact">Talk to the team</a></nav>
+    </div>
+    <div class="foot-bottom">
+      <a class="brand big" href="index.html"><b>INTERVIEW</b><span>PRO</span></a>
+      <p>&copy; 2026 Caprae Capital Services <a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms &amp; Conditions</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script src="../../../prototypes.js"></script>
+  <script src="../../../shared/switcher.js" data-proto="draft-4"></script>
+</body>
+</html>

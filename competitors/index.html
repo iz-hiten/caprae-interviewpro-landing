@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InterviewPro Competitors</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root { --bg: #f6f7f9; --card: #fff; --ink: #111827; --muted: #6b7280; --line: #e5e7eb; --brand: #1f3864; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 13px/1.45 system-ui, sans-serif; }
+    header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 24px;
+             background: var(--card); border-bottom: 1px solid var(--line); }
+    header a { color: var(--brand); text-decoration: none; font-weight: 600; }
+    h1 { margin: 0; font-size: 16px; flex: 1; }
+    .filters { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filters button { padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff;
+                      font: inherit; cursor: pointer; }
+    .filters button[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+    main { padding: 12px 24px 24px; }
+    .boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .us, .pat { border-radius: 10px; padding: 10px 12px; }
+    .us { background: #eef2fb; border: 1px solid #c7d2ee; }
+    .pat { background: #fffbeb; border: 1px solid #fde68a; }
+    .us b, .pat b { color: var(--brand); }
+    .us ul, .pat ul { margin: 6px 0 0; padding-left: 18px; }
+    .scroll { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; min-width: 1400px; }
+    th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+    th { position: sticky; top: 0; background: #f9fafb; font-size: 12px; color: var(--muted); font-weight: 600; }
+    td a { color: var(--brand); font-weight: 600; text-decoration: none; }
+    td q { font-style: italic; }
+    .tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; white-space: nowrap; }
+    .t-oneway { background: #fef3c7; } .t-finance { background: #dbeafe; } .t-assess { background: #fce7f3; }
+    .t-ats { background: #dcfce7; } .t-ai { background: #e0e7ff; } .t-diy { background: #f3e8ff; }
+    small { color: var(--muted); }
+    footer { color: var(--muted); padding-top: 10px; }
+    @media (max-width: 800px) { .boxes { grid-template-columns: 1fr; } header, main { padding-left: 16px; padding-right: 16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">&larr; Prototypes</a>
+    <h1>Competitor sheet: what a hiring team could use instead of InterviewPro</h1>
+    <div class="filters" id="filters"></div>
+  </header>
+  <main>
+    <div class="boxes">
+      <div class="us">
+        <b>InterviewPro</b> (live at <a href="https://interview.saasquatchleads.com">interview.saasquatchleads.com</a>):
+        the hiring platform Caprae Capital built for its own recruiting. Most tools below cover one step;
+        InterviewPro covers the whole path a finance firm actually runs.
+        <ul>
+          <li>One link per candidate: resume, camera check, team intro video, timed recorded answers. No account, nothing to install.</li>
+          <li>Every answer transcribed and pre-scored by AI (score, strengths, weaknesses); a person makes the call.</li>
+          <li>Scored on Preparation, Communication and Mission (40 / 35 / 25), with who scored and when.</li>
+          <li>One table from application → work sample → recorded or live interview → NDA → onboarding, each step one click to email.</li>
+        </ul>
+      </div>
+      <div class="pat">
+        <b>How their landing pages are built</b> (patterns seen on the pages below; use these, don't copy them)
+        <ul>
+          <li><b>Hero = one short promise + "Book a demo" / "Try free".</b> e.g. Willo <q>Screen at scale. Shortlist with confidence.</q>, Alex <q>Interview everyone. Hire the best.</q></li>
+          <li><b>Problem section right after the hero.</b> Spark Hire <q>Email, spreadsheets, and your HR software were not made for hiring.</q>, Hirevire <q>Candidate Screening Is Broken</q>.</li>
+          <li><b>"How it works" in 3 steps.</b> Interviewer.AI, Hirevire, ThriveMap. Hireflix sells one idea: <q>Record once, interview 1000</q>.</li>
+          <li><b>Proof strip:</b> customer logos and a count (Hirevire 500+, Breezy 17,000+, Interviewer.AI 850+), a numbers row, testimonials.</li>
+          <li><b>"Works with your ATS"</b> section on nearly every interview tool; <b>security / fairness</b> section on enterprise ones (HireVue, BrightHire, Vervoe).</li>
+          <li><b>FAQ at the bottom</b> (HireVue, Lever, Ribbon, Vervoe, Gem) and a <b>cost calculator</b> (Willo).</li>
+          <li><b>Industry pages:</b> HireVue has a Financial Services page; most smaller tools don't. Room for us.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Company</th><th>Website</th><th>Type</th><th>Who it's for (their words)</th><th>What it is, in plain words</th>
+            <th>Price (public)</th><th>Their landing page: hero + sections</th><th>How InterviewPro differs</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <footer>
+      Researched 2026-11-05. Every website, headline and price above was read from the company's own live page
+      that day (✓). Headlines are quoted as served. Prices change, so check before quoting them.
+      Not included: Sonru (site didn't resolve), Sova and Testlify (didn't load); myinterview.com now redirects to Radancy.
+    </footer>
+  </main>
+
+  <script>
+    var TYPES = {
+      oneway: "One-way video interviews",
+      finance: "Finance & search hiring",
+      assess: "Assessments",
+      ats: "ATS / recruiting CRM",
+      ai: "AI interviewer",
+      diy: "What small teams use today"
+    };
+    var ROWS = [
+      // --- One-way video interviews: the closest match
+      { name: "Hireflix", site: "https://hireflix.com", type: "oneway",
+        who: "Recruiters who want \"the most user-friendly\" one-way video tool",
+        what: "Candidates record answers to set questions on their own time; the team reviews and shares the videos",
+        price: "$75 / mo or $150 / mo (billed yearly); every plan has every feature; 1 month free",
+        page: "<q>The most … one-way video interview software</q> → why use it → <q>Record once, interview 1000</q> → no scheduling → review & share → ATS integrations → try it",
+        diff: "Stops at the recorded answer. Ours carries the same person from application and work sample to interview, scoring, NDA and onboarding." },
+      { name: "Spark Hire", site: "https://www.sparkhire.com", type: "oneway",
+        who: "Small and medium organizations; \"lean HR teams\"",
+        what: "Applicant tracking plus video interviews and behavioral assessments, sold together or separately",
+        price: "Video interviews from $249 / mo (billed annually); ATS from $335 / mo",
+        page: "<q>Hiring Software for Small &amp; Medium Organizations</q> → problem (<q>Email, spreadsheets, and your HR software were not made for hiring</q>) → ATS → <q>One hiring platform, or start with what you need</q>",
+        diff: "General small-business hiring. Ours scores what a finance firm checks: preparation, communication, mission." },
+      { name: "Willo", site: "https://www.willo.video", type: "oneway",
+        who: "Hiring teams screening many candidates",
+        what: "Candidate screening by recorded answers, with shortlisting help",
+        price: "Free plan; paid plans on the pricing page",
+        page: "<q>Screen at scale. Shortlist with confidence.</q> → how it works → role-relevant questions → accessible experience → trust → integrations → cost-saving calculator",
+        diff: "Screening only. Ours also holds the work sample, the live-interview booking and the NDA." },
+      { name: "Hirevire", site: "https://hirevire.com", type: "oneway",
+        who: "Small teams screening candidates (\"500+ companies\")",
+        what: "One-way video, audio and text answers; every plan transcribes and scores answers",
+        price: "$49, $149 or $249 / mo; 7-day trial, no card",
+        page: "<q>Simplest Way to Screen Candidates</q> → logos → <q>Candidate Screening Is Broken</q> → how it works → walkthrough video → who it's for",
+        diff: "Closest feature match (transcribe + score). Ours adds a human rubric, the work sample and the steps after the interview." },
+      { name: "VidCruiter", site: "https://vidcruiter.com", type: "oneway",
+        who: "Enterprise and high-volume hiring",
+        what: "Recorded and live video interviews, scheduling and interview analysis, inside your ATS",
+        price: "Quote only",
+        page: "<q>AI Recruiting Software Powering Smarter Interviewing Decisions</q> → screening to hired → <q>Interviewing, simplified</q> → <q>Hire faster without leaving your ATS</q> → features → resources",
+        diff: "Built for big HR teams. Ours fits a small firm hiring interns and associates." },
+      { name: "Interviewer.AI", site: "https://interviewer.ai", type: "oneway",
+        who: "\"Teams That Screen at Scale\" (850+ companies)",
+        what: "AI video interviews that screen and rank candidates",
+        price: "See site (free trial, no card)",
+        page: "<q>The World's Most Advanced AI Interview Platform</q> → press logos → products → <q>How to Start in 3 Steps?</q> → <q>It's like adding 15 full-time recruiters</q>",
+        diff: "AI does the ranking. In ours the AI score sits next to the human score and a person decides." },
+      { name: "Truffle", site: "https://www.hiretruffle.com", type: "oneway",
+        who: "\"Small teams doing high-volume hiring\"",
+        what: "Screens every applicant against your criteria: resume, one-way questions, assessments",
+        price: "From $49 / mo",
+        page: "<q>Skip the rough. Keep the diamond.</q> → problem (auto-apply flood) → quotes → how it works → pricing → <q>Got an ATS? Great. No ATS? Also great.</q>",
+        diff: "Playful tone, general hiring. Ours speaks finance: work samples, NDAs, deal-team roles." },
+
+      // --- Finance & search hiring
+      { name: "HireVue", site: "https://www.hirevue.com", type: "finance",
+        who: "Large employers; has a Financial Services page (\"bankers, advisors and contact center teams\"); case study: Mitsubishi UFJ Trust and Banking",
+        what: "Video interviews, assessments and scheduling with AI, for big hiring programs",
+        price: "Not public (plans via sales)",
+        page: "<q>Make confident talent decisions.</q> → predictive content → end-to-end selection → results → governance → FAQ",
+        diff: "Made for bank-sized programs. Ours is for a small finance team that wants the whole path in one place." },
+      { name: "Recruit CRM", site: "https://recruitcrm.io", type: "finance",
+        who: "Recruitment firms, incl. \"Corporate and PE Recruitment\" and retained executive search",
+        what: "Applicant tracking + client CRM for agencies that place candidates",
+        price: "Per-user plans on site",
+        page: "Hero lists the firm types it serves → <q>Built for agencies that have outgrown basic ATS tools</q> → AI agents → <q>One placement pays for it</q>",
+        diff: "For agencies placing people elsewhere. Ours is for a firm hiring its own team." },
+      { name: "Clockwork Recruiting", site: "https://www.clockworkrecruiting.com", type: "finance",
+        who: "Retained executive search firms, in-house executive recruiting, institutional investors",
+        what: "Project management for executive searches",
+        price: "Not public",
+        page: "<q>Software for Retained Executive Search, done right</q> → why stakes are high → guide/book offer → customers",
+        diff: "Senior executive searches. Ours handles many junior hires: interns, associates." },
+      { name: "Invenias (Bullhorn)", site: "https://www.bullhorn.com/products/invenias-executive-search/", type: "finance",
+        who: "Executive search firms",
+        what: "Executive search platform (invenias.com now redirects to Bullhorn)",
+        price: "Not public",
+        page: "<q>Invenias executive search software</q> → customer story → features → resources",
+        diff: "Same as Clockwork: built for search firms, not for screening candidates." },
+      { name: "eFinancialCareers", site: "https://www.efinancialcareers.com", type: "finance",
+        who: "Finance and tech job seekers; employers post jobs",
+        what: "Job board for finance and tech",
+        price: "Employer pricing not public",
+        page: "<q>Search … jobs in financial services and technology</q> → news → top hiring companies → latest jobs",
+        diff: "Where candidates are found, not screened. Pairs with ours rather than replacing it." },
+      { name: "Wall Street Oasis", site: "https://www.wallstreetoasis.com", type: "finance",
+        who: "People breaking into finance (\"1,000,000+ members\"); firms can \"Train Your Talent and Find Elite Professionals\"",
+        what: "Finance community, interview prep and training",
+        price: "Courses on site",
+        page: "<q>Accelerate Your Elite Career</q> → paths → mentors → community → firms section → results",
+        diff: "Prepares candidates for finance interviews. We run the interview." },
+
+      // --- Assessments
+      { name: "Harver", site: "https://harver.com", type: "assess",
+        who: "Enterprise volume hiring",
+        what: "Predictive assessments and hiring automation",
+        price: "Not public",
+        page: "<q>Better Talent Decisions. Faster.</q> → <q>The Top Choice for Volume Hiring</q> → why → process → demo",
+        diff: "Tests before the interview. Ours is the interview and everything around it." },
+      { name: "Cappfinity", site: "https://cappfinity.com", type: "assess",
+        who: "Employers hiring and developing talent",
+        what: "Strengths-based assessments and development tools",
+        price: "Not public",
+        page: "Title: <q>Talent Assessment &amp; Development</q> (page renders in the browser; no headline in the HTML)",
+        diff: "Assessment science. Ours is the working tool a small team runs hiring in." },
+      { name: "SHL", site: "https://www.shl.com", type: "assess",
+        who: "Large organizations",
+        what: "Talent assessments and people insights; \"Integrates with 80+ ATS\"",
+        price: "Not public",
+        page: "<q>Everyone has AI. Not everyone is ready.</q> → talent insights → solutions → news",
+        diff: "Enterprise tests. Ours is lightweight and covers the whole path." },
+      { name: "Arctic Shores", site: "https://www.arcticshores.com", type: "assess",
+        who: "Employers hiring for potential",
+        what: "Task-based assessments, sold as \"ChatGPT-proof\"",
+        price: "Not public",
+        page: "<q>ChatGPT has broken traditional recruitment methods. But not ours.</q> → <q>Tasks, not questions</q>",
+        diff: "Game-like tasks. Ours uses a real work sample and recorded answers." },
+      { name: "TestGorilla", site: "https://www.testgorilla.com", type: "assess",
+        who: "Any hiring team",
+        what: "Skills tests plus a skills-tested talent pool",
+        price: "Free; assessments from $215 / mo (billed annually)",
+        page: "<q>Find great talent</q> → <q>Prove they can do the job</q> → logos",
+        diff: "Generic skill tests. Ours uses the firm's own work sample and questions." },
+      { name: "Vervoe", site: "https://vervoe.com", type: "assess",
+        who: "Enterprises",
+        what: "Role-based skills assessments with explainable results",
+        price: "Not public",
+        page: "<q>Talent decisions you can trust.</q> → what it is → <q>Proof, not promises.</q> → security → reviews → FAQ",
+        diff: "Assessments only. Ours runs the interview, the scoring and the follow-up." },
+      { name: "Criteria", site: "https://www.criteriacorp.com", type: "assess",
+        who: "Organizations making \"evidence-based talent decisions\"",
+        what: "Assessments, video interviewing and talent development",
+        price: "Not public",
+        page: "<q>Hire to Inspire</q> → problem → one platform → assess / interview / develop → science → results",
+        diff: "Broad HR suite. Ours is focused on one firm's hiring path." },
+
+      // --- ATS / recruiting CRM
+      { name: "Greenhouse", site: "https://www.greenhouse.com", type: "ats",
+        who: "Growing and large companies",
+        what: "Applicant tracking and structured hiring",
+        price: "Core / Plus / Pro via demo",
+        page: "<q>Hiring. Orchestrated.</q> → people / process / signal → testimonials → who's hiring",
+        diff: "Tracks candidates; video interviews come from add-ons. Ours has them built in." },
+      { name: "Lever", site: "https://www.lever.co", type: "ats",
+        who: "Scaling teams",
+        what: "Applicant tracking + recruiting CRM",
+        price: "Custom quote",
+        page: "<q>Hiring That Doesn't Hijack Your Week</q> → ATS → solutions → customers → FAQ → <q>Home for Dinner.</q>",
+        diff: "A system to fill in. Ours does the screening work, not just the tracking." },
+      { name: "Ashby", site: "https://www.ashbyhq.com", type: "ats",
+        who: "\"Ambitious teams\"",
+        what: "Applicant tracking, scheduling, recruiting CRM and analytics in one",
+        price: "From $400 / mo (Foundations, up to 100 employees, as shown)",
+        page: "<q>What an ATS should be.</q> → products (ATS, Scheduling, CRM, Analytics) → AI → product tour",
+        diff: "Full ATS for tech companies. Ours is smaller and built for a finance firm's steps." },
+      { name: "Workable", site: "https://www.workable.com", type: "ats",
+        who: "\"35,000+ companies\"",
+        what: "Applicant tracking + HR, with an AI recruiting agent",
+        price: "From $299 / mo; video interviews +$109 / mo",
+        page: "<q>The agent recruits. You manage talent.</q> → numbers → AI in the ATS → HR platform",
+        diff: "Video interviews are a paid add-on. In ours they're the core." },
+      { name: "Gem", site: "https://www.gem.com", type: "ats",
+        who: "Recruiting teams",
+        what: "Recruiting CRM and AI sourcing, with your ATS or on its own",
+        price: "Plans on site",
+        page: "<q>Better recruiting. Built on Gem.</q> → source / review / hire / report → numbers → Gem + your ATS → FAQ",
+        diff: "Finding candidates. Ours is screening and moving them through." },
+      { name: "Zoho Recruit", site: "https://www.zoho.com/recruit/", type: "ats",
+        who: "Corporate HR and staffing agencies",
+        what: "Applicant tracking + recruitment CRM",
+        price: "Free to start",
+        page: "<q>Celebrate growth with every new hire</q> → <q>No more slow hires.</q> → AI assistant → post everywhere → automation",
+        diff: "General ATS. Ours fits one firm's own hiring path." },
+      { name: "Manatal", site: "https://www.manatal.com", type: "ats",
+        who: "HR teams, agencies, headhunters",
+        what: "AI recruitment software with screening and interviews",
+        price: "From $15 / user / mo (billed annually)",
+        page: "<q>Transform the way you recruit with AI.</q> → features list → pricing on the home page",
+        diff: "Cheap ATS. Ours adds recorded interviews and finance-specific scoring." },
+      { name: "JazzHR", site: "https://www.jazzhr.com", type: "ats",
+        who: "Small businesses",
+        what: "Easy applicant tracking",
+        price: "From $1,000 / yr (billed annually)",
+        page: "<q>JazzHR: User-Friendly Recruiting Software</q> → <q>The Best ATS for Small Businesses</q> → why → reviews → FAQ",
+        diff: "No recorded interviews. Ours has them built in." },
+      { name: "Breezy HR", site: "https://breezy.hr", type: "ats",
+        who: "\"17,000+ companies\"",
+        what: "Applicant tracking: advertise, qualify, hire",
+        price: "Plans on site",
+        page: "<q>Find &amp; Hire Employees, Sooner.</q> → advertise & attract → automate & qualify → hire & measure → testimonials",
+        diff: "Pipeline tracking. Ours does the interview inside the pipeline." },
+
+      // --- AI interviewers
+      { name: "Alex", site: "https://www.alex.com", type: "ai",
+        who: "Teams hiring \"without adding TA headcount\" (apriora.ai now redirects here)",
+        what: "An AI recruiter that interviews, screens and schedules every candidate",
+        price: "See site",
+        page: "<q>Interview everyone. Hire the best.</q> → natural conversations → fraud checks → scheduling → ATS → impact",
+        diff: "AI runs the interview. In ours your team sets the questions and people make the call." },
+      { name: "Ribbon", site: "https://www.ribbon.ai", type: "ai",
+        who: "Recruiting companies (\"500+\")",
+        what: "AI interviews by voice, email and SMS",
+        price: "See site",
+        page: "<q>Interview every applicant. Hire the right ones faster.</q> → case studies → impact → wall of love → FAQ",
+        diff: "Voice bot. Ours keeps recorded video so the team sees the person." },
+      { name: "BrightHire", site: "https://brighthire.com", type: "ai",
+        who: "\"The world's most ambitious companies\"",
+        what: "Interview notes and highlights, AI interviewer, fraud detection",
+        price: "Not public",
+        page: "<q>The AI-native hiring platform for the world's most ambitious companies</q> → one system → fraud → AI interviewer → security",
+        diff: "Enterprise interview intelligence. Ours is the simple version a small firm can run itself." },
+      { name: "Metaview", site: "https://www.metaview.ai", type: "ai",
+        who: "Recruiting teams",
+        what: "AI agents that source, screen, take interview notes and help hire",
+        price: "Not public",
+        page: "<q>Get the right butts in seats.</q> → always-on agents → full context → security",
+        diff: "AI assistant for recruiters. Ours is the interview and pipeline itself." },
+      { name: "Paradox", site: "https://www.paradox.ai", type: "ai",
+        who: "High-volume employers",
+        what: "Chat assistant for screening, scheduling and onboarding",
+        price: "Not public",
+        page: "<q>Meet the AI assistant for all things hiring.</q> → automate the boring stuff → ROI → <q>Keep your ATS</q>",
+        diff: "Hourly-job chat screening. Ours is for professional roles with work samples." },
+
+      // --- Today
+      { name: "Email + forms + booking links + a spreadsheet", site: "https://tally.so", type: "diy",
+        who: "Most small firms (Caprae ran parts of its own process this way: forms, booking links, a shared sheet)",
+        what: "Applications by email, a form for the work sample, booking links for calls, a sheet to track it",
+        price: "Free / cheap",
+        page: "Tally: <q>The simplest way to create forms</q>",
+        diff: "This is what we replace: no copying between inbox, form, calendar and sheet; one record per candidate." },
+    ];
+
+    var rows = document.getElementById("rows");
+    var filters = document.getElementById("filters");
+    var active = null;
+    function render() {
+      rows.innerHTML = ROWS.filter(function (r) { return !active || r.type === active; }).map(function (r) {
+        return "<tr><td><b>" + r.name + "</b> ✓</td>" +
+          "<td><a href='" + r.site + "' target='_blank' rel='noopener'>" +
+            r.site.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "") + "</a></td>" +
+          "<td><span class='tag t-" + r.type + "'>" + TYPES[r.type] + "</span></td>" +
+          "<td>" + r.who + "</td><td>" + r.what + "</td><td>" + r.price + "</td><td>" + r.page + "</td><td>" + r.diff + "</td></tr>";
+      }).join("");
+    }
+    [null].concat(Object.keys(TYPES)).forEach(function (t) {
+      var b = document.createElement("button");
+      b.textContent = t ? TYPES[t] : "All (" + ROWS.length + ")";
+      b.setAttribute("aria-pressed", String(t === active));
+      b.onclick = function () {
+        active = t;
+        filters.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        render();
+      };
+      filters.appendChild(b);
+    });
+    render();
+  </script>
+</body>
+</html>
