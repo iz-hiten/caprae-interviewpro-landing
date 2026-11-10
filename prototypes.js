@@ -36,4 +36,12 @@ window.PROTOTYPES = [
       { id: "a", note: "First version" },
     ],
   },
+  {
+    slug: "draft-5",
+    name: "Draft 5: Paper and ink, refined",
+    note: "Draft 2 with a Granola-style header (just links at the top; a white rounded bar appears once you scroll), Granola-style pill buttons, a Caprae Capital badge above the headline, and Besley headings (close to Granola's Quadrant).",
+    versions: [
+      { id: "a", note: "First version" },
+    ],
+  },
 ];

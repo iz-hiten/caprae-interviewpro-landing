@@ -92,6 +92,23 @@ the demo transcripts and AI notes), not screenshots. Template modules used: hero
 proof row, sticky step list beside scrolling windows, bento cards with captions, dark section, FAQ,
 closing panel, form beside answers. Words are the approved content, unchanged.
 
+## Draft 5: Paper and ink, refined
+`prototypes/draft-5/a/`: Draft 2 (the live one) with the same pages, words and layout, plus Granola-style
+pieces, measured on granola.ai in Chrome. All CSS changes are one block at the end of `style.css`.
+- Header: 56px tall, 8px from the top. At the top of the page it is only links; once you scroll, a white
+  rounded bar appears with a hairline border and a soft shadow. 14px links with pill hover, an outline
+  "Sign in" pill and a filled "Talk to the team" pill. Hanken Grotesk (close to Granola's Melange).
+- Buttons: full pills, 52px, no lift on hover. Our colours only.
+- Home: the line above the headline is now a badge ("Caprae Capital" tag + "Video interviews for hiring
+  teams" + arrow) linking to capraecapital.com, shaped like Granola's "New / Voice typing" badge.
+- Headings: Besley everywhere the serif was used (Granola's Quadrant is a paid font; Besley is the
+  closest free match), with sizes reduced because Besley is wider than Instrument Serif.
+- Nav: Home, Features, How it works, For candidates, plus one "Contact us" button (on phones it is in the menu).
+- Two colours only for dots, ticks and tags: dark on light sections, cream on dark ones. Pictures fill
+  their boxes. No "Real app · demo data" notes, no office address.
+
+All drafts: no "Sign in" link anywhere (header, phone menu, footer, contact page).
+
 ## Content sheets
 Generated from the pages, so re-run them after any copy change:
 

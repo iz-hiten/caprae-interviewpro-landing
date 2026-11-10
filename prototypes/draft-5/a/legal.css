@@ -1,0 +1,78 @@
+/* Copied from capraecapital.com assets/legal.css (via the CRM landing); recoloured for Draft 2 (warm paper, ink, deep gold). */
+/* Legal document pages (/privacy, /terms).
+   Scoped to .legal-* so nothing here can leak into the main site.
+   Palette and fonts are the site's own: #f5f3ee / #8a6400 / Inter.
+   Long-form legal copy is editorial content, so the line-height is deliberately
+   generous here even though the rest of the site is dense. */
+
+.legal-wrap { background: #f5f3ee; min-height: 100vh; padding: 56px 20px 80px; }
+.legal-container { max-width: 1120px; margin: 0 auto; }
+
+.legal-head { border-bottom: 1px solid #dcd7cb; padding-bottom: 24px; margin-bottom: 40px; }
+.legal-eyebrow { font-family: var(--sans); font-size: 13px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase; color: #8a6400; margin: 0 0 10px; }
+.legal-head h1 { font-family: var(--sans); font-size: 44px; font-weight: 600;
+  color: #1b1b18; letter-spacing: -0.03em; margin: 0 0 8px; line-height: 1.1; }
+.legal-head .legal-sub { font-family: var(--sans); font-size: 14px; color: #66655e; margin: 0; }
+
+.legal-layout { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+
+/* sticky table of contents */
+.legal-toc { position: sticky; top: 88px; background: #fbfaf7; border: 1px solid #dcd7cb;
+  padding: 20px; max-height: calc(100vh - 140px); overflow-y: auto; }
+/* Defensive: the TOC contains a semantic <nav>. A global `nav { position:
+   fixed }` rule in a host page once turned it into a full-width overlay, so
+   pin it back explicitly. */
+.legal-toc nav { position: static; display: block; background: none; border: 0;
+  padding: 0; margin: 0; inset: auto; }
+
+.legal-toc-title { font-family: var(--sans); font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: #8a6400; margin-bottom: 14px; }
+.legal-toc a { display: block; font-family: var(--sans); font-size: 12.5px; line-height: 1.45;
+  color: #66655e; text-decoration: none; padding: 5px 0; border-bottom: 1px solid transparent;
+  transition: color .2s ease; }
+.legal-toc a:hover { color: #8a6400; }
+/* The section you're reading (legal.js): gold text and a thin gold line beside it. */
+.legal-toc a { position: relative; padding-left: 12px; margin-left: -12px; }
+.legal-toc a::before { content: ""; position: absolute; left: 0; top: 7px; bottom: 7px; width: 2px;
+  background: #8a6400; transform: scaleY(0); transition: transform .2s ease; }
+.legal-toc a.active { color: #8a6400; }
+.legal-toc a.active::before { transform: scaleY(1); }
+
+/* the converted document */
+.legal-doc { min-width: 0; max-width: 760px; font-family: var(--sans);
+  font-size: 14.5px; line-height: 1.75; color: #66655e; }
+.legal-doc h1 { font-family: var(--sans); font-size: 30px; font-weight: 600; letter-spacing: -0.02em;
+  color: #1b1b18; margin: 0 0 14px; }
+.legal-doc h2 { font-family: var(--sans); font-size: 21px; font-weight: 600; letter-spacing: -0.015em;
+  color: #8a6400; margin: 44px 0 14px; padding-top: 20px;
+  border-top: 1px solid #dcd7cb; }
+.legal-doc h3 { font-family: var(--sans); font-size: 15px; font-weight: 600;
+  color: #1b1b18; letter-spacing: .3px; margin: 26px 0 10px; }
+.legal-doc h1[id], .legal-doc h2[id], .legal-doc h3[id] { scroll-margin-top: 88px; }
+.legal-doc p, .legal-doc div { margin: 0 0 12px; }
+.legal-doc ul, .legal-doc ol { margin: 0 0 14px; padding-left: 22px; }
+.legal-doc li { margin: 6px 0; }
+.legal-doc strong, .legal-doc b { color: #1f2937; font-weight: 600; }
+.legal-doc a { color: #8a6400; text-decoration: underline; text-underline-offset: 2px;
+  overflow-wrap: anywhere; }
+.legal-doc a:hover { color: #1b1b18; }
+.legal-doc .legal-updated { font-size: 13px; color: #6b7280; }
+.legal-doc table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px;
+  display: block; overflow-x: auto; }
+.legal-doc th, .legal-doc td { border: 1px solid #dcd7cb; padding: 9px 11px; text-align: left;
+  vertical-align: top; }
+.legal-doc thead th, .legal-doc th { background: #fbfaf7; color: #1b1b18; font-weight: 600; }
+
+.legal-foot { margin-top: 64px; padding-top: 24px; border-top: 1px solid #dcd7cb;
+  display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center;
+  font-family: var(--sans); font-size: 13px; color: #6b7280; }
+.legal-foot a { color: #66655e; text-decoration: none; }
+.legal-foot a:hover { color: #8a6400; }
+
+@media (max-width: 900px) {
+  .legal-layout { grid-template-columns: 1fr; gap: 0; }
+  .legal-toc { display: none; }
+  .legal-wrap { padding: 40px 16px 60px; }
+  .legal-head h1 { font-size: 34px; }
+}
