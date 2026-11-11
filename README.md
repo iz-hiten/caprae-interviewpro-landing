@@ -106,6 +106,9 @@ pieces, measured on granola.ai in Chrome. All CSS changes are one block at the e
 - Nav: Home, Features, How it works, For candidates, plus one "Contact us" button (on phones it is in the menu).
 - Two colours only for dots, ticks and tags: dark on light sections, cream on dark ones. Pictures fill
   their boxes. No "Real app · demo data" notes, no office address.
+- Mobile (one block at the end of `style.css`, all inside max-width queries, desktop unchanged): hero
+  pictures re-laid for phones, less space between sections, score diagram and contact email fit at 320px,
+  bigger footer tap targets, hero badge wraps cleanly on narrow phones.
 
 All drafts: no "Sign in" link anywhere (header, phone menu, footer, contact page).
 

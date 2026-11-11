@@ -549,3 +549,49 @@ h2 { font-size: clamp(30px, 3.6vw, 50px); }
 .panel .win { border: 0; border-radius: 0; box-shadow: none; }
 .swap-view .shots .win { align-self: stretch; display: flex; flex-direction: column; }
 .swap-view .shots .win img { flex: 1; height: 100%; object-fit: cover; object-position: top left; }
+
+/* ===== Draft 5, mobile =====
+   Phones and tablets only (every rule is inside a max-width query); desktop is unchanged. */
+@media (max-width: 1020px) {
+  /* Camera card in the hero pictures: one label only, so "Question 1" never collides with "Recording" */
+  .show .cam .bar span:last-child { display: none; }
+}
+@media (max-width: 700px) {
+  /* Hero pictures: dashboard on top; score window below it on the right, overlapping the dashboard a little;
+     camera card on the left; the AI-score note under the score window. Nothing covers anything important. */
+  .show { padding-bottom: calc(43vw + 34px); margin-bottom: 44px; }
+  .show .float-score { width: 66%; right: -2%; bottom: 40px; transform: rotate(1deg); }
+  .show .cam { width: 34%; left: -1%; bottom: 0; border-width: 4px; border-radius: 14px; transform: rotate(-2deg); }
+  .show .cam .bar { padding: 7px 9px; font-size: 10.5px; }
+  .show .cam .rec { left: 7px; top: 7px; padding: 4px 7px; font-size: 10px; }
+  .show .chip { left: auto; right: 0; bottom: -40px; padding: 8px 12px 8px 8px; }
+  .show .chip b { width: 30px; height: 30px; }
+  .showcase { padding-bottom: 72px; }
+
+  /* Less empty space between sections on a small screen */
+  .sec { padding: 72px 0; }
+  .close { padding: 80px 0; }
+  .foot { padding-top: 64px; }
+
+  /* Score diagram: the three bands keep their widths (0-5, 5-8, 8-10) and every word fits */
+  .scale .bar { font-size: 10.5px; }
+  .scale .bar div { padding: 10px 7px; line-height: 1.2; }
+  .scale .r, .scale .s { white-space: nowrap; }
+  .scale .nums { font-size: 10px; }
+
+  /* Footer links: a comfortable tap height */
+  .foot nav { gap: 2px; }
+  .foot nav a { padding: 7px 0; }
+  .foot nav h4 { margin-bottom: 6px; }
+
+  /* Contact details: the email address shrinks to fit instead of breaking mid-word */
+  .info a, .info p { font-size: min(24px, 6vw); overflow-wrap: normal; }
+  .info > div a { display: inline-block; padding: 4px 0; }
+}
+@media (max-width: 420px) {
+  /* Hero badge on narrow phones: the tag stays on one line, the text balances over two if needed */
+  .badge { height: auto; min-height: 32px; padding: 4px 12px 4px 4px; border-radius: 18px; text-align: left; max-width: 100%; }
+  .badge .tag { white-space: nowrap; flex: none; }
+  .badge > span:not(.tag) { text-wrap: balance; line-height: 1.25; }
+  .badge svg { flex: none; }
+}
