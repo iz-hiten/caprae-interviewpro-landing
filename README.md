@@ -109,6 +109,9 @@ pieces, measured on granola.ai in Chrome. All CSS changes are one block at the e
 - Mobile (one block at the end of `style.css`, all inside max-width queries, desktop unchanged): hero
   pictures re-laid for phones, less space between sections, score diagram and contact email fit at 320px,
   bigger footer tap targets, hero badge wraps cleanly on narrow phones.
+- Review fixes: branded "InterviewPro by Caprae Tech"; every score is out of 10 (text and the score badges in
+  the screenshots, edited to match); $130M+ with no year; ~20 hrs/week from capraetech.io; no pricing;
+  "application to onboarding"; handbook reviewed by AI, decided by the team.
 
 All drafts: no "Sign in" link anywhere (header, phone menu, footer, contact page).
 
